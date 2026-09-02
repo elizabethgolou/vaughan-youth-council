@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Voice — Vaughan Youth Council</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="site-brand">
+        <h1 class="site-title">
+            <img src="VaughanYouthCouncil.png" alt="Vaughan Youth Council logo" class="site-logo">
+            <span class="site-title-text">Vaughan Youth Council</span>
+        </h1>
+    </div>
+    <button id="menu-toggle">☰</button>
+    <button id="dark-toggle">🌙</button>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+            <a href="initiatives.html">Initiatives</a>
+            <div class="dropdown-menu">
+                <a href="initiatives.html">Current Initiatives</a>
+                <a href="past-initiatives.html">Past Initiatives</a>
+            </div>
+        </div>
+        <a href="contact.html">Contact</a>
+        <a href="youthvoice.html" class="active">Youth Voice</a>
+        <a href="join.html" class="button">Join</a>
+    </nav>
+</header>
+
+<section class="wave-top section-fade">
+    <h2>Youth Priorities</h2>
+    <div class="priority-grid">
+        <div class="priority-card">
+            <h3>Mental Health</h3>
+            <p>Support for emotional wellbeing, access to trusted spaces, and stronger youth-centered resources.</p>
+        </div>
+        <div class="priority-card">
+            <h3>Sustainability</h3>
+            <p>Ideas that promote greener habits, community care, and environmentally responsible action.</p>
+        </div>
+        <div class="priority-card">
+            <h3>Community Belonging</h3>
+            <p>Creating welcoming spaces where young people feel seen, included, and connected.</p>
+        </div>
+    </div>
+</section>
+
+<section class="wave-bottom section-fade">
+    <h2>Youth Data &amp; Insights</h2>
+    <div class="form-card">
+        <p style="margin-bottom: 1rem; color: var(--text-secondary);">This section will soon feature youth engagement trends, community feedback highlights, and research-based insights.</p>
+        <div class="priority-card" style="background: linear-gradient(135deg, rgba(46,124,155,0.12), rgba(255,255,255,0.7)); border: 1px solid rgba(46,124,155,0.2);">
+            <h3>Coming Soon</h3>
+            <p>We’re preparing a new space to share meaningful youth data, stories, and insights with the community.</p>
+        </div>
+    </div>
+</section>
+
+<section class="wave-bottom section-fade">
+    <h2>Share Your Voice</h2>
+    <div class="form-card">
+        <form class="youth-voice-form" action="mailto:vaughanyouthcouncil@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="type">What would you like to share?</label>
+            <select id="type" name="type">
+                <option>Submit an idea</option>
+                <option>Share an issue affecting youth</option>
+            </select>
+
+            <label for="message">Details</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us more about your idea or concern..." required></textarea>
+
+            <button type="submit" class="button">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <h3>Vaughan Youth Council</h3>
+            <p>Empowering young people to lead, serve, and shape a stronger community.</p>
+        </div>
+        <div>
+            <h4>Connect</h4>
+            <div class="footer-links">
+                <a href="https://www.instagram.com/vaughan_yc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+                    Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/vaughan-yc" target="_blank" rel="noopener noreferrer" aria-label="Indeed">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M8 7h3v10H8z"></path><path d="M13 7h3v10h-3z"></path><path d="M8 17h8"></path></svg>
+                    Indeed
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4>Get involved</h4>
+            <p>Join upcoming events, volunteer opportunities, and youth leadership initiatives.</p>
+        </div>
+    </div>
+    <p class="copyright">© 2026 Vaughan Youth Council. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+<script src="script.js"></script>

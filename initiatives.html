@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join — Vaughan Youth Council</title>
-
+    <title>Current Initiatives — Vaughan Youth Council</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="navbar">
     <div class="site-brand">
         <h1 class="site-title">
             <img src="VaughanYouthCouncil.png" alt="Vaughan Youth Council logo" class="site-logo">
@@ -26,40 +25,37 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="nav-dropdown">
-            <a href="initiatives.html">Initiatives</a>
+            <a href="initiatives.html" class="active">Initiatives</a>
             <div class="dropdown-menu">
-                <a href="initiatives.html">Current Initiatives</a>
+                <a href="initiatives.html" class="active">Current Initiatives</a>
                 <a href="past-initiatives.html">Past Initiatives</a>
             </div>
         </div>
         <a href="contact.html">Contact</a>
         <a href="youthvoice.html">Youth Voice</a>
-        <a href="join.html" class="button active">Join</a>
+        <a href="join.html" class="join-btn">Join</a>
     </nav>
 </header>
+<main>
+    <section class="wave-top current-initiatives-page section-fade">
+        <h2>Current Initiatives</h2>
+        <p class="initiatives-intro">Stay updated on our community initiatives, workshops, and volunteer opportunities.</p>
+        <div class="calendar-frame">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=UTC&showPrint=0&title=Vaughan%20Youth%20Council&showTitle=0&showCalendars=0&showTz=0&src=NDQxOWNjMTBmNmU2MDllNTQxYjExZGVhZGYwNDJhNGVkZWM5MzVhNjViZWU2MmEyODUyZmZjZjdhZTJhYzQwMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233f51b5" title="Vaughan Youth Council current initiatives calendar" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </section>
 
-<section class="wave-top">
-    <h2>Join the Council</h2>
-    <p>
-        Become part of a youth-led movement shaping Vaughan’s future.  
-        We welcome passionate youth ages 14–20 who want to make a difference.
-    </p>
-</section>
+    <section class="expectations-section">
+        <h2>What to expect</h2>
+        <div class="cards">
+            <div class="card"><h3>Leadership Workshops</h3><p>Training sessions that build confidence, communication, and advocacy skills.</p></div>
+            <div class="card"><h3>Community Advocacy Projects</h3><p>Initiatives that address local issues and amplify youth voices in decision-making.</p></div>
+            <div class="card"><h3>Youth Events</h3><p>Collaborative events that bring youth together to learn, connect, and lead.</p></div>
+            <div class="card"><h3>Volunteer Programs</h3><p>Hands-on opportunities to support local organizations and contribute to community growth.</p></div>
+        </div>
+    </section>
+</main>
 
-<section class="wave-bottom">
-    <h2>Requirements</h2>
-
-    <div class="card-container">
-        <div class="card"><h3>Age 14–20</h3><p>You must be within the eligible youth age range.</p></div>
-        <div class="card"><h3>Live / Study / Work in Vaughan</h3><p>You must be connected to the Vaughan community.</p></div>
-        <div class="card"><h3>Commitment</h3><p>Weekly virtual meetings + occasional in-person events.</p></div>
-        <div class="card"><h3>Passion</h3><p>A desire to advocate, lead, and contribute.</p></div>
-    </div>
-
-    <a href="https://docs.google.com/forms/d/1_vURX4pZ_xV6mQKH8b9gTpVRIpU31cU-cZUxpoHP-n0/viewform" class="button">
-        Apply Now
-    </a>
-</section>
 
 <footer class="site-footer">
     <div class="footer-content">
