@@ -210,13 +210,23 @@ nav {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 18px);
+    top: 100%;
     left: -14px;
     min-width: 190px;
-    padding: 10px 0;
+    padding: 18px 0 10px;
     background: #1a4060;
     border-top: 3px solid #99db43;
     box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.nav-dropdown:hover::after,
+.nav-dropdown:focus-within::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -14px;
+    right: 0;
+    height: 18px;
 }
 
 .nav-dropdown:hover .dropdown-menu,
@@ -227,7 +237,7 @@ nav {
 .dropdown-menu a {
     display: block;
     margin: 0;
-    padding: 8px 16px;
+    padding: 11px 16px;
     white-space: nowrap;
     font-size: 15px;
 }
@@ -1463,6 +1473,254 @@ body.dark .carousel-copy p {
 body.dark .carousel-copy h3,
 body.dark .carousel-copy-note {
     color: #99db43;
+}
+
+/* -----------------------------------------------------------
+   VAUGHAN YOUTH NETWORK FAIR
+----------------------------------------------------------- */
+.network-fair-banner {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 88px 10% 100px;
+    color: white;
+    background: linear-gradient(135deg, #1a4060 0%, #285f85 52%, #4a85b6 100%);
+    overflow: hidden;
+}
+
+.network-fair-banner::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -80px;
+    bottom: -180px;
+    border: 1px solid rgba(241,236,98,0.42);
+    border-radius: 50%;
+    box-shadow: 0 0 0 26px rgba(241,236,98,0.08), 0 0 0 52px rgba(241,236,98,0.05);
+    pointer-events: none;
+}
+
+.network-fair-banner .eyebrow {
+    color: #f1ec62;
+    margin-bottom: 14px;
+    font-size: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+.network-fair-banner h2 {
+    max-width: 900px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.28);
+}
+
+.network-fair-lede {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.65;
+}
+
+.network-fair-details {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.network-fair-details span {
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 999px;
+    color: #f8fbff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.network-fair-content,
+.organization-section {
+    padding-top: 76px;
+    padding-bottom: 82px;
+}
+
+.network-fair-intro {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.network-fair-intro h2 {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.network-fair-intro .eyebrow {
+    margin-bottom: 6px;
+}
+
+.fair-planning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fair-planning-card,
+.organization-card {
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(74,133,182,0.16);
+    border-left: 6px solid #99db43;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(26,64,96,0.1);
+}
+
+.fair-planning-card {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-left: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #4a85b6;
+    background: linear-gradient(135deg, rgba(74,133,182,0.1), rgba(153,219,67,0.18));
+    border: 2px dashed rgba(74,133,182,0.42);
+    border-radius: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.venue-placeholder {
+    min-height: min(82vh, 900px);
+    margin-bottom: 24px;
+}
+
+.fair-planning-card h3,
+.organization-card h3 {
+    color: #1a4060;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.organization-section {
+    background: rgba(232,238,245,0.55);
+}
+
+.organization-list {
+    display: grid;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.organization-card {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.8fr) 1.2fr;
+    gap: 28px;
+    align-items: center;
+    padding: 20px;
+}
+
+.organization-placeholder {
+    width: 240px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.organization-logo {
+    display: block;
+    width: 220px;
+    height: 140px;
+    object-fit: contain;
+}
+
+.organization-copy {
+    padding: 8px 14px 8px 0;
+}
+
+.organization-label {
+    color: #4a85b6;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.organization-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.organization-tags span {
+    padding: 6px 10px;
+    border: 1px solid rgba(74,133,182,0.3);
+    border-radius: 999px;
+    color: #1a4060;
+    background: rgba(153,219,67,0.16);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+body.dark .organization-card {
+    background: rgba(20,38,53,0.92);
+    border-color: rgba(153,219,67,0.28);
+}
+
+body.dark .organization-section {
+    background: rgba(15,27,38,0.7);
+}
+
+body.dark .fair-planning-card h3,
+body.dark .organization-card h3,
+body.dark .fair-planning-card p,
+body.dark .organization-card p {
+    color: #f4f7fb;
+}
+
+body.dark .image-placeholder {
+    color: #99db43;
+    border-color: rgba(153,219,67,0.5);
+    background: linear-gradient(135deg, rgba(74,133,182,0.18), rgba(153,219,67,0.1));
+}
+
+body.dark .organization-tags span {
+    border-color: rgba(153,219,67,0.42);
+    color: #f4f7fb;
+    background: rgba(153,219,67,0.12);
+}
+
+@media (max-width: 800px) {
+    .fair-planning-grid,
+    .organization-card {
+        grid-template-columns: 1fr;
+    }
+
+    .organization-copy {
+        padding: 0 4px 8px;
+    }
 }
 
 /* -----------------------------------------------------------
