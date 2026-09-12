@@ -34,6 +34,59 @@ if (menuToggle && nav) {
     });
 }
 
+const eventMapDialog = document.querySelector('#event-map-dialog');
+const eventMapTrigger = document.querySelector('.event-map-trigger');
+const eventMapClose = document.querySelector('.event-map-close');
+const eventMapImage = document.querySelector('.event-map-zoom-image');
+const eventMapZoomIn = document.querySelector('.event-map-zoom-in');
+const eventMapZoomOut = document.querySelector('.event-map-zoom-out');
+const eventMapReset = document.querySelector('.event-map-reset');
+
+if (eventMapDialog && eventMapTrigger && eventMapClose && eventMapImage) {
+    const initialEventMapZoom = 0.6;
+    let eventMapZoom = initialEventMapZoom;
+    let lastFocusedElement;
+
+    function updateEventMapZoom() {
+        eventMapImage.style.transform = `scale(${eventMapZoom})`;
+        eventMapZoomOut.disabled = eventMapZoom <= 1;
+        eventMapZoomIn.disabled = eventMapZoom >= 3;
+    }
+
+    function closeEventMap() {
+        eventMapDialog.close();
+        eventMapZoom = initialEventMapZoom;
+        updateEventMapZoom();
+        lastFocusedElement?.focus();
+    }
+
+    eventMapTrigger.addEventListener('click', () => {
+        lastFocusedElement = document.activeElement;
+        eventMapDialog.showModal();
+        updateEventMapZoom();
+        eventMapClose.focus();
+    });
+
+    eventMapClose.addEventListener('click', closeEventMap);
+    eventMapZoomIn?.addEventListener('click', () => {
+        eventMapZoom = Math.min(3, eventMapZoom + 0.25);
+        updateEventMapZoom();
+    });
+    eventMapZoomOut?.addEventListener('click', () => {
+        eventMapZoom = Math.max(1, eventMapZoom - 0.25);
+        updateEventMapZoom();
+    });
+    eventMapReset?.addEventListener('click', () => {
+        eventMapZoom = initialEventMapZoom;
+        updateEventMapZoom();
+    });
+    eventMapDialog.addEventListener('click', event => {
+        if (event.target === eventMapDialog) {
+            closeEventMap();
+        }
+    });
+}
+
 // SCROLL-TRIGGERED ANIMATIONS (cards, sections)
 const animatedElements = document.querySelectorAll('.card, .section-fade');
 

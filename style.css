@@ -1003,6 +1003,33 @@ body.dark .metric-card {
     box-shadow: 0 18px 36px rgba(0,0,0,0.16);
 }
 
+.join-page section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+}
+
+.join-page .wave-top > p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.join-page .card-container {
+    justify-content: center;
+    gap: 20px;
+}
+
+.join-page .card {
+    min-height: 0;
+}
+
+.join-page > section .button {
+    display: block;
+    width: max-content;
+    margin: 28px auto 0;
+}
+
 .executive-photo {
     width: 100%;
     height: 220px;
@@ -1791,9 +1818,252 @@ body.dark .network-fair-registration h2 {
     letter-spacing: 0.02em;
 }
 
-.venue-placeholder {
-    min-height: min(82vh, 900px);
+.venue-schedule {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid rgba(74,133,182,0.18);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.72);
+    box-shadow: 0 12px 30px rgba(26,64,96,0.1);
+}
+
+.venue-schedule li {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.8fr) 1.2fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 22px;
+    border-bottom: 1px solid rgba(74,133,182,0.14);
+}
+
+.venue-schedule li:last-child {
+    border-bottom: 0;
+}
+
+.venue-schedule time {
+    color: #1a4060;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.venue-schedule p {
+    color: #263f52;
+    line-height: 1.55;
+}
+
+body.dark .venue-schedule {
+    background: rgba(20,38,53,0.92);
+    border-color: rgba(153,219,67,0.28);
+}
+
+body.dark .venue-schedule li {
+    border-color: rgba(153,219,67,0.18);
+}
+
+body.dark .venue-schedule time,
+body.dark .venue-schedule p {
+    color: #f4f7fb;
+}
+
+.event-map-frame {
+    position: relative;
     margin-bottom: 24px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(74,133,182,0.22);
+    border-radius: 14px;
+    background: #e8eef5;
+    box-shadow: 0 12px 30px rgba(26,64,96,0.1);
+}
+
+.event-map-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.event-map-trigger {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 16px;
+    background: #1a4060;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+.event-map-trigger:hover,
+.event-map-trigger:focus-visible {
+    background: #285f85;
+}
+
+.event-map-dialog {
+    width: min(96vw, 1400px);
+    max-width: none;
+    max-height: 94vh;
+    padding: 0;
+    border: 0;
+    border-radius: 16px;
+    background: #f7f9fc;
+    color: #1a1a1a;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+}
+
+.event-map-dialog::backdrop {
+    background: rgba(15,27,38,0.78);
+}
+
+.event-map-dialog-content {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    max-height: 94vh;
+    padding: 18px;
+}
+
+.event-map-dialog-header,
+.event-map-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.event-map-dialog-header {
+    padding: 0 0 14px;
+}
+
+.event-map-dialog-header h2 {
+    margin: 0;
+    color: #1a4060;
+    font-size: 28px;
+}
+
+.event-map-close,
+.event-map-zoom-in,
+.event-map-zoom-out,
+.event-map-reset {
+    border: 1px solid rgba(74,133,182,0.28);
+    border-radius: 8px;
+    background: white;
+    color: #1a4060;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.event-map-close {
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.event-map-viewport {
+    min-height: 0;
+    overflow: auto;
+    border-radius: 10px;
+    background: #e8eef5;
+    text-align: center;
+}
+
+.event-map-zoom-image {
+    display: block;
+    width: 100%;
+    max-width: none;
+    transform-origin: center top;
+    transition: transform 0.2s ease;
+}
+
+.event-map-controls {
+    justify-content: center;
+    padding-top: 14px;
+}
+
+.event-map-zoom-in,
+.event-map-zoom-out {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+}
+
+.event-map-reset {
+    padding: 10px 14px;
+}
+
+.event-map-close:hover,
+.event-map-close:focus-visible,
+.event-map-zoom-in:hover,
+.event-map-zoom-out:hover,
+.event-map-reset:hover,
+.event-map-close:focus-visible,
+.event-map-zoom-in:focus-visible,
+.event-map-zoom-out:focus-visible,
+.event-map-reset:focus-visible {
+    border-color: #4a85b6;
+    background: #e8eef5;
+}
+
+.event-map-zoom-in:disabled,
+.event-map-zoom-out:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+body.dark .event-map-dialog {
+    background: #142635;
+    color: #f4f7fb;
+}
+
+body.dark .event-map-dialog-header h2,
+body.dark .event-map-close,
+body.dark .event-map-zoom-in,
+body.dark .event-map-zoom-out,
+body.dark .event-map-reset {
+    color: #f4f7fb;
+}
+
+body.dark .event-map-close,
+body.dark .event-map-zoom-in,
+body.dark .event-map-zoom-out,
+body.dark .event-map-reset {
+    background: #1a4060;
+    border-color: rgba(153,219,67,0.35);
+}
+
+@media (max-width: 600px) {
+    .event-map-image {
+        height: 100%;
+    }
+
+    .event-map-trigger {
+        right: 10px;
+        bottom: 10px;
+        padding: 9px 12px;
+        font-size: 0.9rem;
+    }
+
+    .event-map-dialog {
+        width: 96vw;
+        border-radius: 12px;
+    }
+
+    .event-map-dialog-content {
+        padding: 12px;
+    }
+
+    .event-map-dialog-header h2 {
+        font-size: 22px;
+    }
 }
 
 .fair-planning-card h3,
@@ -1906,7 +2176,8 @@ body.dark .organization-tags span {
 
 @media (max-width: 800px) {
     .fair-planning-grid,
-    .organization-card {
+    .organization-card,
+    .venue-schedule li {
         grid-template-columns: 1fr;
     }
 
@@ -1946,6 +2217,16 @@ footer {
     font-family: "Norwester", sans-serif;
     margin-bottom: 10px;
     color: #f1ec62;
+}
+
+.site-footer h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-footer h4 a:hover,
+.site-footer h4 a:focus-visible {
+    text-decoration: underline;
 }
 
 .site-footer p {
@@ -2337,5 +2618,45 @@ iframe {
     .site-footer {
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    .feature-panel {
+        gap: 18px;
+    }
+
+    .feature-media {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        transform: none;
+    }
+
+    .feature-media:hover {
+        transform: none;
+    }
+
+    .feature-copy h3 {
+        font-size: 1.4rem;
+    }
+
+    .event-map-dialog-content {
+        max-height: 88vh;
+    }
+
+    .event-map-viewport {
+        min-height: 42vh;
+    }
+
+    .event-map-controls {
+        flex-wrap: wrap;
+    }
+
+    .venue-schedule li {
+        gap: 8px;
+        padding: 16px;
+    }
+
+    .organization-card h3,
+    .fair-planning-card h3 {
+        overflow-wrap: anywhere;
     }
 }
