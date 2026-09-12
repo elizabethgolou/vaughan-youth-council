@@ -300,6 +300,10 @@ nav a.active::after {
     transition: all 0.3s ease;
 }
 
+#menu-toggle {
+    display: none;
+}
+
 #dark-toggle:hover,
 #menu-toggle:hover,
 #dark-toggle:focus-visible,
@@ -481,6 +485,63 @@ section h2::before {
     z-index: -1;
 }
 
+.home-section-lede {
+    max-width: 760px;
+    margin: -16px auto 34px;
+    text-align: center;
+}
+
+.home-link-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.home-link-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    padding: 20px;
+    border-left: 5px solid #99db43;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.82);
+    color: #1a4060;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(26,64,96,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-link-list a:hover,
+.home-link-list a:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(26,64,96,0.14);
+}
+
+.home-link-list strong {
+    font-family: "Norwester", sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.home-link-list span {
+    color: #4a6173;
+    line-height: 1.55;
+}
+
+body.dark .home-link-list a {
+    background: rgba(20,38,53,0.9);
+    color: #f4f7fb;
+}
+
+body.dark .home-link-list span {
+    color: #c7d4df;
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -632,6 +693,49 @@ body.dark .values-intro {
     letter-spacing: 1px;
 }
 
+.members-section {
+    background: rgba(232,238,245,0.55);
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    min-height: 92px;
+    padding: 22px 24px;
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(74,133,182,0.16);
+    border-left: 5px solid #99db43;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(26,64,96,0.08);
+}
+
+.member-card h3 {
+    color: #1a4060;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+body.dark .members-section {
+    background: rgba(15,27,38,0.7);
+}
+
+body.dark .member-card {
+    background: rgba(20,38,53,0.92);
+    border-color: rgba(153,219,67,0.28);
+}
+
+body.dark .member-card h3 {
+    color: #f4f7fb;
+}
+
 body.dark .value-card h3,
 body.dark .value-card p,
 body.dark .value-number {
@@ -662,6 +766,10 @@ body.dark .about-photo {
         grid-template-columns: 1fr;
     }
 
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .about-panel {
         padding: 22px;
     }
@@ -669,6 +777,12 @@ body.dark .about-photo {
     .about-photo,
     .about-photo img {
         min-height: 280px;
+    }
+}
+
+@media (max-width: 520px) {
+    .members-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -689,7 +803,7 @@ body.dark .about-photo {
    FEATURE BAND
 ----------------------------------------------------------- */
 .feature-band {
-    padding: 20px 10% 10px;
+    padding: 42px 10%;
 }
 
 .feature-panel {
@@ -697,11 +811,11 @@ body.dark .about-photo {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 24px;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,247,255,0.92));
+    background: rgba(255,255,255,0.92);
     border: 1px solid rgba(74,133,182,0.16);
-    border-radius: 24px;
-    padding: 32px;
-    box-shadow: 0 16px 36px rgba(26,64,96,0.12);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 14px 34px rgba(26,64,96,0.08);
     overflow: hidden;
     position: relative;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -714,7 +828,7 @@ body.dark .about-photo {
 
 .feature-media {
     min-height: 240px;
-    border-radius: 18px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(26,64,96,0.12);
     transform: perspective(1000px) rotateY(-2deg);
@@ -724,6 +838,14 @@ body.dark .about-photo {
 .feature-media:hover {
     transform: perspective(1000px) rotateY(0deg) scale(1.02);
     box-shadow: 0 16px 30px rgba(26,64,96,0.18);
+}
+
+.feature-band-reverse .feature-panel {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.feature-band-reverse .feature-media {
+    order: -1;
 }
 
 .feature-media img {
@@ -775,7 +897,7 @@ body.dark .about-photo {
 }
 
 .feature-copy h3 {
-    font-size: 30px;
+    font-size: 27px;
     margin-bottom: 12px;
     color: #1a4060;
 }
@@ -828,6 +950,24 @@ body.dark .metric-card {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+}
+
+.home-card-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.home-traction-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.home-initiative-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-card-grid .card {
+    min-width: 0;
+    max-width: none;
 }
 
 .executive-row {
@@ -1545,6 +1685,52 @@ body.dark .carousel-copy-note {
     text-transform: uppercase;
 }
 
+.network-fair-registration {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background: rgba(255,255,255,0.72);
+    text-align: center;
+}
+
+.network-fair-registration-copy {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.network-fair-registration .eyebrow {
+    margin-bottom: 8px;
+    color: #4a85b6;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.network-fair-registration h2 {
+    margin-bottom: 24px;
+    color: #1a4060;
+}
+
+.network-fair-registration p:not(.eyebrow) {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.network-fair-registration .button {
+    margin-top: 24px;
+}
+
+body.dark .network-fair-registration {
+    background: rgba(20,38,53,0.72);
+}
+
+body.dark .network-fair-registration .eyebrow {
+    color: #99db43;
+}
+
+body.dark .network-fair-registration h2 {
+    color: #f8fbff;
+}
+
 .network-fair-content,
 .organization-section {
     padding-top: 76px;
@@ -1559,7 +1745,7 @@ body.dark .carousel-copy-note {
 
 .network-fair-intro h2 {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 28px;
 }
 
 .network-fair-intro .eyebrow {
@@ -1647,10 +1833,16 @@ body.dark .carousel-copy-note {
     border-radius: 0;
 }
 
+.vff-logo-placeholder {
+    background: #1a4060;
+    border-radius: 14px;
+    padding: 12px;
+}
+
 .organization-logo {
     display: block;
-    width: 220px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -1841,12 +2033,25 @@ body.dark .site-footer a:hover {
         grid-template-columns: 1fr;
     }
 
+    .feature-band-reverse .feature-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-band-reverse .feature-media {
+        order: 0;
+    }
+
     .feature-media {
         min-height: 220px;
     }
 
     .card-container {
         flex-direction: column;
+    }
+
+    .home-traction-grid,
+    .home-initiative-grid {
+        grid-template-columns: 1fr;
     }
 
     .priority-grid {
@@ -1905,5 +2110,232 @@ body.dark .site-footer a:hover {
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* -----------------------------------------------------------
+   SMALL-SCREEN SIZING
+----------------------------------------------------------- */
+img,
+iframe {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px 5%;
+        gap: 8px;
+    }
+
+    .site-brand {
+        min-width: 0;
+        flex: 1 1 auto;
+        padding: 6px 10px;
+    }
+
+    .site-title {
+        min-width: 0;
+    }
+
+    .site-title-text {
+        font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+        line-height: 1.15;
+    }
+
+    .site-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    #menu-toggle,
+    #dark-toggle {
+        flex: 0 0 auto;
+        margin-left: 6px;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    header nav,
+    header nav.open {
+        order: 4;
+        width: 100%;
+        margin: 0;
+        padding: 12px 0 4px;
+        border-radius: 0;
+        gap: 2px;
+    }
+
+    header nav a,
+    header nav .nav-dropdown > a,
+    header nav .button,
+    header nav .join-btn {
+        width: 100%;
+        margin: 0;
+        padding: 11px 12px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    header nav .button,
+    header nav .join-btn {
+        justify-content: flex-start;
+        margin-top: 4px;
+    }
+
+    .dropdown-menu a {
+        padding: 9px 12px 9px 24px;
+        white-space: normal;
+    }
+
+    section,
+    .feature-band,
+    .network-fair-banner {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    section h2 {
+        display: block;
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        line-height: 1.1;
+        margin-bottom: 28px;
+    }
+
+    .hero {
+        min-height: 0;
+        padding-top: 78px;
+        padding-bottom: 78px;
+    }
+
+    .hero h2,
+    .network-fair-banner h2,
+    .contact-intro h2 {
+        font-size: clamp(2rem, 10vw, 3.25rem);
+        padding: 0;
+    }
+
+    .hero p,
+    .network-fair-lede,
+    .contact-lead {
+        font-size: 1rem;
+    }
+
+    .feature-panel,
+    .carousel-card,
+    .contact-details,
+    .contact-form-panel,
+    .organization-card {
+        padding: 20px;
+    }
+
+    .about-panel,
+    .value-card,
+    .priority-card,
+    .form-card {
+        padding: 20px;
+    }
+
+    .card,
+    .home-card-grid .card {
+        min-width: 0;
+        max-width: none;
+        min-height: 0;
+        padding: 24px 20px;
+    }
+
+    .card-container {
+        gap: 18px;
+    }
+
+    .carousel-stage,
+    .past-initiatives-page .carousel-stage {
+        min-height: 56vw;
+        max-height: 380px;
+    }
+
+    .calendar-frame iframe {
+        height: 600px;
+    }
+
+    .organization-placeholder {
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    .site-brand {
+        padding: 5px 8px;
+    }
+
+    .site-title {
+        gap: 8px;
+    }
+
+    .site-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    #menu-toggle,
+    #dark-toggle {
+        font-size: 19px;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 6px;
+    }
+
+    .button {
+        width: 100%;
+        margin-top: 24px;
+        padding: 13px 20px;
+        text-align: center;
+    }
+
+    .contact-intro,
+    .network-fair-banner {
+        padding-top: 58px;
+        padding-bottom: 64px;
+    }
+
+    .contact-details,
+    .contact-form-panel,
+    .feature-panel,
+    .carousel-card,
+    .organization-card {
+        border-radius: 16px;
+        padding: 16px;
+    }
+
+    .feature-media {
+        min-height: 190px;
+    }
+
+    .carousel-copy h3,
+    .feature-copy h3,
+    .contact-details h3,
+    .contact-form-panel h3 {
+        font-size: 1.5rem;
+    }
+
+    .network-fair-details span {
+        width: 100%;
+    }
+
+    .site-footer {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
