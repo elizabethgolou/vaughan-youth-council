@@ -48,8 +48,9 @@ if (eventMapDialog && eventMapTrigger && eventMapClose && eventMapImage) {
     let lastFocusedElement;
 
     function updateEventMapZoom() {
-        eventMapImage.style.transform = `scale(${eventMapZoom})`;
-        eventMapZoomOut.disabled = eventMapZoom <= 1;
+        eventMapImage.style.width = `${eventMapZoom * 100}%`;
+        eventMapImage.style.transform = 'none';
+        eventMapZoomOut.disabled = eventMapZoom <= initialEventMapZoom;
         eventMapZoomIn.disabled = eventMapZoom >= 3;
     }
 

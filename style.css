@@ -1980,8 +1980,8 @@ body.dark .venue-schedule p {
     display: block;
     width: 100%;
     max-width: none;
-    transform-origin: center top;
-    transition: transform 0.2s ease;
+    margin: 0 auto;
+    transition: width 0.2s ease;
 }
 
 .event-map-controls {
