@@ -57,7 +57,6 @@
 <section class="wave-bottom section-fade">
     <h2>Youth Data &amp; Insights</h2>
     <div class="form-card">
-        <p style="margin-bottom: 1rem; color: var(--text-secondary);
         <div class="priority-card" style="background: linear-gradient(135deg, rgba(46,124,155,0.12), rgba(255,255,255,0.7)); border: 1px solid rgba(46,124,155,0.2);">
             <h3>Coming Soon</h3>
             <p>We’re preparing a new space to share meaningful youth data, stories, and insights with the community.</p>
@@ -68,12 +67,16 @@
 <section class="wave-bottom section-fade">
     <h2>Share Your Voice</h2>
     <div class="form-card">
-        <form class="youth-voice-form" action="mailto:vaughanyouthcouncil@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+        <form class="youth-voice-form" action="https://formsubmit.co/vaughanyouthcouncil@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Youth Voice submission from the Vaughan Youth Council website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
 
             <label for="type">What would you like to share?</label>
             <select id="type" name="type">
@@ -81,7 +84,7 @@
                 <option>Share an issue affecting youth</option>
             </select>
 
-            <label for="message">Details</label>
+            <label for="message">Details <span aria-hidden="true">*</span></label>
             <textarea id="message" name="message" rows="6" placeholder="Tell us more about your idea or concern..." required></textarea>
 
             <button type="submit" class="button">Send</button>
