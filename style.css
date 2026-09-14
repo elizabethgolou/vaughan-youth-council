@@ -291,13 +291,20 @@ nav a.active::after {
 /* DARK MODE + HAMBURGER BUTTONS */
 #dark-toggle,
 #menu-toggle {
-    background: none;
-    border: none;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
     color: white;
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 1;
     margin-left: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 #menu-toggle {
@@ -309,6 +316,8 @@ nav a.active::after {
 #dark-toggle:focus-visible,
 #menu-toggle:focus-visible {
     transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.24);
+    border-color: #99db43;
     color: #f1ec62;
 }
 
