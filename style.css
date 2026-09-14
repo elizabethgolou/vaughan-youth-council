@@ -817,6 +817,14 @@ body.dark .about-photo {
         font-size: 22px;
         line-height: 1.25;
     }
+
+    .executive-row .executive-role {
+        display: block;
+        color: #4a85b6;
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: center;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2452,10 +2460,13 @@ iframe {
         min-width: 0;
         flex: 1 1 auto;
         padding: 6px 10px;
+        justify-content: center;
     }
 
     .site-title {
         min-width: 0;
+        justify-content: center;
+        width: 100%;
     }
 
     .site-title-text {
