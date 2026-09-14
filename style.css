@@ -793,6 +793,29 @@ body.dark .about-photo {
 }
 
 @media (max-width: 520px) {
+    .card-container {
+        align-items: center;
+    }
+
+    .card-container .card,
+    .home-card-grid .card,
+    .values-grid .card {
+        width: 100%;
+        max-width: 420px;
+        justify-self: center;
+    }
+
+    .home-link-list,
+    .members-grid {
+        justify-items: center;
+    }
+
+    .home-link-list > *,
+    .members-grid > * {
+        width: 100%;
+        max-width: 420px;
+    }
+
     .members-grid {
         grid-template-columns: 1fr;
     }
