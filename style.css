@@ -2635,15 +2635,25 @@ iframe {
 @media (max-width: 520px) {
     .site-brand {
         padding: 5px 8px;
+        flex-direction: column;
     }
 
     .site-title {
+        flex-direction: column;
         gap: 8px;
+        align-items: center;
     }
 
     .site-logo {
         width: 42px;
         height: 42px;
+        margin: 0 auto;
+    }
+
+    .site-title-text {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     #menu-toggle,
@@ -2652,6 +2662,27 @@ iframe {
         min-width: 40px;
         min-height: 40px;
         padding: 6px;
+    }
+
+    .executive-row .card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow: visible;
+    }
+
+    .executive-row .executive-photo {
+        flex: 0 0 180px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .executive-row .card h3,
+    .executive-row .executive-role {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     .button {
