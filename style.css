@@ -1117,10 +1117,12 @@ body.dark .metric-card {
 }
 
 .executive-role {
+    display: block;
     font-style: italic;
     color: #4a85b6;
     margin-top: -0.2rem;
     margin-bottom: 0.8rem;
+    text-align: center;
 }
 
 .card h3 {
@@ -2495,6 +2497,7 @@ iframe {
     .site-title-text {
         font-size: clamp(0.95rem, 3.8vw, 1.25rem);
         line-height: 1.15;
+        text-align: center;
     }
 
     .site-logo {
