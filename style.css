@@ -796,6 +796,27 @@ body.dark .about-photo {
     .members-grid {
         grid-template-columns: 1fr;
     }
+
+    .executive-row {
+        gap: 20px;
+    }
+
+    .executive-row .card {
+        width: 100%;
+        min-width: 0;
+        max-width: 320px;
+        min-height: 0;
+        padding: 22px;
+    }
+
+    .executive-row .executive-photo {
+        height: 180px;
+    }
+
+    .executive-row .card h3 {
+        font-size: 22px;
+        line-height: 1.25;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
