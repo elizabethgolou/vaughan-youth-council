@@ -2636,6 +2636,8 @@ iframe {
     .site-brand {
         padding: 5px 8px;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .site-title {
@@ -2668,21 +2670,26 @@ iframe {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        height: auto;
+        min-height: 0;
         overflow: visible;
     }
 
     .executive-row .executive-photo {
+        display: block;
         flex: 0 0 180px;
         width: 100%;
         margin-bottom: 16px;
     }
 
     .executive-row .card h3,
-    .executive-row .executive-role {
+    .executive-row .card p.executive-role {
+        display: block;
         position: relative;
         z-index: 1;
         width: 100%;
         flex: 0 0 auto;
+        clear: both;
     }
 
     .button {
